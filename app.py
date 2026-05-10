@@ -69,37 +69,37 @@ st.markdown("""
 # ПРЕСЕТЫ ПАРАМЕТРОВ
 # ============================================================================
 PRESETS = {
-    "📋 Шатров (рис. 3.21)": {
+    "Цилиндр с ε₁=1": {
         'a_lambda': 0.1, 'l_lambda': 0.25, 'Delta': 0.1,
         'b_over_l': 0.01, 'l0_over_l': 0.0,
         'eps1': 1.0, 'mu1': 1.0, 'eps2': 1.0, 'mu2': 1.0,
         'description': 'Полуволновой вибратор в свободном пространстве (свободно-стоящий случай)',
     },
-    "🔵 Цилиндр с ε₁=2": {
+    "Цилиндр с ε₁=2": {
         'a_lambda': 0.1, 'l_lambda': 0.25, 'Delta': 0.1,
         'b_over_l': 0.01, 'l0_over_l': 0.0,
         'eps1': 2.0, 'mu1': 1.0, 'eps2': 1.0, 'mu2': 1.0,
         'description': 'Слабодиэлектрический цилиндр (стекло, текстолит)',
     },
-    "🟢 Цилиндр с ε₁=3.5": {
+    "Цилиндр с ε₁=3.5": {
         'a_lambda': 0.1, 'l_lambda': 0.25, 'Delta': 0.1,
         'b_over_l': 0.01, 'l0_over_l': 0.0,
         'eps1': 3.5, 'mu1': 1.0, 'eps2': 1.0, 'mu2': 1.0,
         'description': 'Среднедиэлектрический цилиндр (керамика)',
     },
-    "🟠 Цилиндр с ε₁=5": {
+    "Цилиндр с ε₁=5": {
         'a_lambda': 0.1, 'l_lambda': 0.25, 'Delta': 0.1,
         'b_over_l': 0.01, 'l0_over_l': 0.0,
         'eps1': 5.0, 'mu1': 1.0, 'eps2': 1.0, 'mu2': 1.0,
         'description': 'Сильнодиэлектрический цилиндр — выраженная направленность',
     },
-    "📐 Полноволновой (2l=λ)": {
+    "Полноволновой (2l=λ)": {
         'a_lambda': 0.1, 'l_lambda': 0.5, 'Delta': 0.1,
         'b_over_l': 0.01, 'l0_over_l': 0.0,
         'eps1': 1.0, 'mu1': 1.0, 'eps2': 1.0, 'mu2': 1.0,
         'description': 'Полноволновой вибратор — отличие ДН от полуволнового',
     },
-    "📐 Короткий (2l=λ/4)": {
+    "Короткий (2l=λ/4)": {
         'a_lambda': 0.05, 'l_lambda': 0.125, 'Delta': 0.1,
         'b_over_l': 0.01, 'l0_over_l': 0.0,
         'eps1': 1.0, 'mu1': 1.0, 'eps2': 1.0, 'mu2': 1.0,
@@ -362,14 +362,14 @@ def render_sidebar():
         # Режим производительности
         mode = st.radio(
             "Режим",
-            options=["⚡ Быстрый", "⚖️ Сбалансированный", "🎯 Точный"],
+            options=["Быстрый", "Сбалансированный", "Точный"],
             index=1,
             help="Влияет на размерности дискретизации"
         )
         
-        if mode == "⚡ Быстрый":
+        if mode == "Быстрый":
             default_k, default_n, default_h, default_t = 8, 10, 200, 73
-        elif mode == "⚖️ Сбалансированный":
+        elif mode == "Сбалансированный":
             default_k, default_n, default_h, default_t = 12, 15, 400, 181
         else:
             default_k, default_n, default_h, default_t = 16, 20, 600, 361
@@ -526,11 +526,11 @@ def tab_home():
 
 def tab_calc(params):
     """Вкладка с основным расчётом."""
-    st.markdown("## 🎯 Расчёт характеристик излучателя")
+    st.markdown("## Расчёт характеристик излучателя")
     
     col_btn, col_info = st.columns([1, 3])
     with col_btn:
-        run_button = st.button("🚀 Запустить расчёт", type="primary", use_container_width=True)
+        run_button = st.button("Запустить расчёт", type="primary", use_container_width=True)
     with col_info:
         st.markdown(
             f"""<div class='small-note' style='padding-top: 8px;'>
