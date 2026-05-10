@@ -1,0 +1,42 @@
+# =============================================================================
+# docker-compose.yml — для разработки и локального запуска strip-dipole-cylinder
+# =============================================================================
+# Запуск:
+#   docker compose up
+#
+# Перезапуск после изменения кода:
+#   docker compose up --build
+#
+# Запуск в фоне:
+#   docker compose up -d
+# =============================================================================
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: strip-dipole-cylinder
+    image: strip-dipole-cylinder:latest
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    # Ограничения ресурсов (соответствуют Streamlit Cloud)
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    # Для разработки — монтируем код как volume (раскомментируйте при необходимости)
+    # volumes:
+    #   - ./app.py:/app/app.py:ro
+    #   - ./strip_dipole_cylinder:/app/strip_dipole_cylinder:ro

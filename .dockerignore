@@ -1,0 +1,52 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache
+.mypy_cache
+.ruff_cache
+*.egg-info
+build/
+dist/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.idea
+.vscode
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docs (не нужны в образе)
+docs/
+
+# Logs / data
+*.log
+output/
+
+# Docker сам
+Dockerfile
+.dockerignore
+
+# Streamlit secrets (никогда!)
+.streamlit/secrets.toml
+
+# Прочее
+README.md
+LICENSE
+CONTRIBUTING.md
+CHANGELOG.md
+RELEASE_NOTES.md

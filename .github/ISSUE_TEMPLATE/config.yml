@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Документация
+    url: https://github.com/tsentavta/strip-dipole-cylinder/blob/main/README.md
+    about: Прочитать README с описанием программы
+  - name: 🚀 Live demo
+    url: https://strip-dipole-cylinder.streamlit.app
+    about: Опробовать веб-приложение в облаке
+  - name: 📦 Инструкция по развёртыванию
+    url: https://github.com/tsentavta/strip-dipole-cylinder/blob/main/docs/DEPLOY.md
+    about: Как развернуть свою копию

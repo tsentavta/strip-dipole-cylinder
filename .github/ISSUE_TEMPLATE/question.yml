@@ -1,0 +1,60 @@
+name: ❓ Question
+description: Задать вопрос об использовании или работе программы
+title: "[QUESTION] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Если у вас вопрос об использовании, теории или реализации — задавайте здесь.
+        
+        Перед созданием issue, пожалуйста, проверьте:
+        - 📖 [README.md](https://github.com/tsentavta/strip-dipole-cylinder/blob/main/README.md)
+        - 📚 Вкладка «О методе» в самом приложении
+        - 📋 [Список открытых и закрытых issues](https://github.com/tsentavta/strip-dipole-cylinder/issues?q=is%3Aissue)
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Категория вопроса
+      options:
+        - Использование программы (как сделать X?)
+        - Понимание результатов (что означает Y?)
+        - Теория и математика (СИУ, метод моментов и т.п.)
+        - Программная реализация (код, архитектура)
+        - Развёртывание (Docker, Streamlit Cloud)
+        - Другое
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Ваш вопрос
+      placeholder: |
+        Сформулируйте вопрос как можно конкретнее.
+        Если речь о результате — приложите скриншот или числовые данные.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Контекст
+      description: |
+        Что вы пытаетесь сделать? Какие параметры используете? 
+        Что уже пробовали?
+      placeholder: |
+        Я пытаюсь рассчитать антенну для ракеты с диэлектрическим обтекателем (ε≈4).
+        Ставлю eps1=4, l/λ=0.25, a/λ=0.15. Получаю F/B около 7 дБ.
+        Вопрос: можно ли увеличить F/B до 15 дБ за счёт изменения геометрии?
+    validations:
+      required: false
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: Что уже пробовали
+      description: Поиск ответа в README, документации, литературе
+    validations:
+      required: false

@@ -1,0 +1,107 @@
+name: ✨ Feature request
+description: Предложить новую функциональность или улучшение
+title: "[FEATURE] "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за идею! Опишите, пожалуйста, ваше предложение подробнее.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую проблему решает это предложение?
+      description: Опишите ситуацию, в которой текущая функциональность недостаточна
+      placeholder: |
+        Например: "Сейчас невозможно рассчитать антенну на сферической подложке —
+        ограничено только цилиндрической геометрией. Это ограничивает применение
+        программы для антенн на корпусах ракетоносителей с обтекаемыми головными частями."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Предлагаемое решение
+      description: Как должна быть реализована новая функциональность?
+      placeholder: |
+        Например: "Добавить модуль `sphere_spectral.py` с расчётом матрицы поверхностных
+        импедансов для сферической геометрии. Использовать сферические гармоники Yₗᵐ
+        вместо рядов Фурье. Адаптировать `compute_pattern` для работы с обоими типами."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Рассмотренные альтернативы
+      description: Какие другие варианты решения вы рассматривали и почему они хуже?
+      placeholder: |
+        Например: "Можно было бы использовать готовую САПР (HFSS, FEKO), но это
+        нарушает принцип открытости и требует коммерческой лицензии."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Область изменений
+      multiple: true
+      options:
+        - Расчётное ядро (numpy/scipy)
+        - Веб-интерфейс (Streamlit/Plotly)
+        - Архитектура / API
+        - Документация
+        - Тесты
+        - DevOps (CI/CD, Docker)
+        - Производительность
+        - Другое
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Оценка сложности
+      description: Ваша субъективная оценка
+      options:
+        - 🟢 Малая (несколько часов работы)
+        - 🟡 Средняя (несколько дней)
+        - 🟠 Большая (неделя+)
+        - 🔴 Очень большая (требует декомпозиции на подзадачи)
+        - ❓ Не могу оценить
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Литература / референсы
+      description: |
+        Ссылки на статьи, диссертации, другие реализации, которые могут помочь
+      placeholder: |
+        - Stratton J.A. "Electromagnetic Theory" — Глава 8 (сферические волны)
+        - Васильев Е.Н. "Возбуждение тел вращения" — Глава 5
+    validations:
+      required: false
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Готовы ли вы участвовать в реализации?
+      options:
+        - Да, могу сделать PR
+        - Да, могу помочь с тестированием
+        - Да, могу помочь с документацией
+        - Нет, только идея
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Дополнительный контекст
+      description: Скриншоты, диаграммы, примеры использования
+    validations:
+      required: false
