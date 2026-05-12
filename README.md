@@ -44,7 +44,7 @@
 
 ### Запуск в облаке
 
-Просто откройте 👉 **[strip-dipole-cylinder.streamlit.app](https://strip-dipole-cylinder.streamlit.app)**
+Просто откройте 👉 **[strip-dipole-cylinder.streamlit.app](https://webemp.streamlit.app/)**
 
 ### Локальная установка
 
